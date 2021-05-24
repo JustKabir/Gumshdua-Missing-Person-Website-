@@ -1,0 +1,38 @@
+{% extends "layouts/layout2.html" %}
+  {% block content %}
+    <main>
+        <div class="maincontainer">
+            <div class="row ">
+                <div class="image col l5 m12 s12 center">
+                    <img src="{{ url_for('static', filename='lost_images/' + person.image) }}">
+                    <h5>{{person.name}}</h5>
+                </div>
+                <div class="info col l7 m12 s12">
+                    <div class="section">
+                        <h5>Personal Details</h5>
+                        <p>Name: <span>{{person.name}}</span></p>
+                        <p>Location: <span>{{person.lostAt}}, {{person.city}}, {{person.state}}, {{person.country}}</span></p>
+                        <p>Age: <span>{{person.age}}</span></p>
+                        <p>Height: <span>{{person.height}}</span></p>
+                        <p>Gender: <span>Female</span></p>
+                        <p>Complexion: <span>{{person.colour}}</span></p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="section">
+                        <h5>Information Available</h5>
+                        <p>Last seen at: <span>{{person.lostAt}}, {{person.city}}, {{person.state}}, {{person.country}}</span></p>
+                        <p>Attire: <span>{{person.attire}}</span></p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="section">
+                        <h5>Rewards and Contact</h5>
+                        <p>Reward: <span>{{person.reward}}</span></p>
+                        <p>Contact Info: <span>{{person.contactNo}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     {% endblock content %}
+    

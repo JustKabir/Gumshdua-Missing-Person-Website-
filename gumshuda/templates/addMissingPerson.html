@@ -1,0 +1,187 @@
+  {% extends "layouts/layout2.html" %}
+  {% block content %}
+  <main>
+    <div class="maincont">
+      <h4>Register</h4>
+      <form method="POST" action="/add-missing-person" enctype="multipart/form-data">
+          <!-- Hidden tag creates our CSRF token -->
+        {{ form.hidden_tag() }}
+        <div class="inputbox">
+          <label for='name'>Name:</label>
+          {% if form.name.errors %}
+            {{ form.name(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.name.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.name(class="form-control form-control-lg")}}
+
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>Age:</label>
+         {% if form.age.errors %}
+            {{ form.age(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.age.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.age(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Height:</label>
+         {% if form.height.errors %}
+            {{ form.height(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.height.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.height(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Complexion:</label>
+         {% if form.colour.errors %}
+            {{ form.colour(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.colour.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.colour(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Last Seen At:</label>
+         {% if form.lostAt.errors %}
+            {{ form.lostAt(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.lostAt.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.lostAt(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Reward:</label>
+         {% if form.reward.errors %}
+            {{ form.reward(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.reward.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.reward(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Gender:</label>
+         {% if form.gender.errors %}
+            {{ form.gender(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.gender.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.gender(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <div class="inputbox">
+          <label for='user'>Contact No.:</label>
+         {% if form.contactNo.errors %}
+            {{ form.contactNo(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.contactNo.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.contactNo(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>State:</label>
+         {% if form.state.errors %}
+            {{ form.state(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.state.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.state(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>Country:</label>
+         {% if form.country.errors %}
+            {{ form.country(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.country.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.country(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>Attire:</label>
+         {% if form.attire.errors %}
+            {{ form.attire(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.attire.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.attire(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>Image:</label>
+        {{ form.image.label() }}
+                    {{ form.image(class="form-control-file") }}
+                    {% if form.image.errors %}
+                        {% for error in form.image.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+        </div>
+
+
+       <input type="submit" value="Register" class="waves-effect waves-light btn submitbtn">
+
+      </form>
+    </div>
+  </main>
+
+ {% endblock content %}

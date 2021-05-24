@@ -1,0 +1,38 @@
+nav{
+    background-color: #ffffff71;
+    box-shadow: 0 2px 2px 0 rgba(236, 236, 236, 0.521) !important;
+}
+
+.brand-logo{
+    color: #8d5000 !important;
+    padding-left: 10vmin !important;
+    font-family: Poppins;
+    font-size: 5vmin !important;
+}
+
+.nav-wrapper ul{
+    padding-right: 10vmin !important;
+}
+
+.nav-wrapper li a{
+    color: #4b4b4b;
+}
+
+.active{
+    background: none !important;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px){
+    .nav-wrapper ul{
+        padding-right: 0vmin !important;
+    }
+    .nav-wrapper ul li a{
+        padding-right: 3vmin !important;
+        padding-left: 0 !important;
+    }
+    .brand-logo{
+        padding-left: 3vmin !important;
+        font-size: 5vmin !important;
+    }
+}

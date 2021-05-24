@@ -1,0 +1,46 @@
+  {% extends "layouts/layout2.html" %}
+  {% block content %}
+  <main>
+    <div class="maincont">
+      <h4>Login</h4>
+        <form method="POST" action="{{url_for('login')}}">
+        {{ form.hidden_tag() }}
+        <div class="inputbox">
+          <label for='email'>Email:</label>
+          {% if form.email.errors %}
+                   {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+        </div>
+
+        <div class="inputbox" style="margin-top: 3vmin;">
+          <label for="password">Password:</label>
+         {% if form.password.errors %}
+                       {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+        </div>
+
+        
+        <p style="text-align: center; margin-top: 0vmin !important;"><span style="color: #4b4b4b;">Don't have an
+            account? </span><a href="{{url_for('register')}}" style="color: #8d5000;">Register Here</a></p>
+
+        <input type="submit" value="Login" class="waves-effect waves-light btn submitbtn">
+
+      </form>
+    </div>
+  </main>
+
+{% endblock content %}

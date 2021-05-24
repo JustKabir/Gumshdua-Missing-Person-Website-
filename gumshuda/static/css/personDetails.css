@@ -1,0 +1,28 @@
+body {
+    background-color: #ffffff;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+main{
+    flex: 1 0 auto !important;
+}
+
+.image img{
+    height: 60vmin;
+    margin: 5vmin;
+}
+
+.maincontainer{
+    padding: 5vmin;
+    padding-top: 0;
+}
+
+.image h5{
+    margin: 0;
+}
+
+.info p{
+    margin: 1vmin 0;
+}

@@ -1,0 +1,117 @@
+body {
+    background-color: #ffffff;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+main {
+    flex: 1 0 auto !important;
+}
+
+.searchbar {
+    position: relative;
+}
+
+.searchinput {
+    margin-left: 12vmin !important;
+    margin-top: 5vmin;
+}
+
+.searchinput label {
+    font-size: 2.5vmin;
+    font-weight: normal;
+}
+
+.searchbar input {
+    width: 60vmin;
+    height: 5vmin;
+    margin-left: 3vmin;
+    line-height: 5vmin;
+    font-size: 2.5vmin;
+    outline: none;
+    border: 0.05vmin solid rgb(201, 201, 201);
+    border-radius: 5vmin;
+    padding-left: 3vmin;
+    padding-right: 3vmin;
+}
+
+.grid-container {
+    margin-left: 10vmin;
+    margin-right: 10vmin;
+}
+
+.card {
+    height: 56vmin !important;
+    /*width: 40vmin !important;*/
+    margin: 1vmin !important;
+}
+
+.card img {
+    height: 35vmin;
+    padding: 2vmin;
+}
+
+.card-content {
+    padding: 2vmin !important;
+}
+
+.card-content span {
+    margin-bottom: 0 !important;
+    font-size: 4vmin !important;
+}
+
+.card span i {
+    font-size: 4.5vmin;
+}
+
+.card-action {
+    padding: 2vmin !important;
+}
+
+.card-action a {
+    margin: 2vmin !important;
+    color: #b66700 !important;
+}
+
+@media only screen and (max-width: 700px) {
+    .searchinput {
+        margin-left: 0 !important;
+    }
+    .searchinput input {
+        width: 50vmin !important;
+    }
+    .grid-container {
+        margin: 0 !important;
+    }
+    .grid-container .col {
+        padding-left: 0.5vmin !important;
+        padding-right: 0.5vmin !important;
+    }
+    .card {
+        height: 102vmin !important;
+        margin: 1vmin !important;
+    }
+    .card img{
+        height: 73vmin; 
+    }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 768px){
+    .searchinput {
+        margin-left: 0 !important;
+    }
+    .searchinput input {
+        width: 50vmin !important;
+    }
+    .grid-container {
+        margin: 0 !important;
+    }
+    .grid-container .col {
+        padding-left: 0.5vmin !important;
+        padding-right: 0.5vmin !important;
+    }
+    .card {
+        height: 46vmin !important;
+    }
+}

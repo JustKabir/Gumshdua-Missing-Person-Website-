@@ -1,0 +1,61 @@
+{% extends "layouts/layout2.html" %}
+  {% block content %}
+  <main>
+    <form action="/find" method="POST">
+    <div class="searchbar">
+      <div class="row">
+        <div class="col s12 l6 searchinput">
+            <label>Search:</label>
+            <input name="state" id="inline" type="text" class="browser-default" placeholder="Search a State">
+        </div>
+      </div>
+    </div>
+  </form>
+    <div class="grid-container row">
+  {% if results == [] %}
+    <h4>No Results Found</h4>
+  {% else %}
+    {% for result in results %}
+      <div class="col s12 m6 l3">
+        <div class="card sticky-action">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{ url_for('static', filename='lost_images/' + result.image) }}">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{result.name}}<i
+                class="material-icons right">more_vert</i></span>
+
+            <p>{{result.lostAt}}, {{result.state}}, {{result.country}}</p>
+          </div>
+
+          <div class="card-action center">
+            <a href="/result/{{result.id}}">More Details</a>
+           <!--  <a href="#">Spotted</a> -->
+          </div>
+
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{result.name}}<i
+                class="material-icons right">close</i></i></span>
+            <p>
+              Location: {{result.lostAt}} <br />
+              Age: {{result.age}} <br />
+              Description: None
+              {% if current_user.id == person.created_by %}
+                  <form action="/person/{{person.id}}/delete" method="POST">
+                    
+                  <button class="btn btn red">Delete</button>
+                  </form>
+                {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+      
+  </main>
+
+ 
+
+    {% endblock content %}
+        }

@@ -1,0 +1,29 @@
+{% extends "layouts/layout2.html" %}
+  {% block content %}
+  <main>
+    <div class="intro-wrapper">
+      <div class="intro-box row">
+        <div class="para col s12 m12 l8">Finding a missing person can be a difficult task, but if you know where to look, it is often much easier to find a missing person. Just follow some simple steps to get help.</div>
+        <div class="col s12 row optbuttons">
+          <a href="{{url_for('home')}}" class="waves-effect waves-light btn col s4">Search for missing person</a>
+          <a href="{{url_for('add_missing_person')}}" class="waves-effect waves-light btn col s4">Register missing person</a>
+        </div>
+      </div>
+    </div>
+    <div class="row stepguide">
+      <div class="col l4 m12 s12 center">
+        <img src="{{url_for('static', filename='images/missingperson.svg')}}">
+        <p>Families and friends of missing people, and those who have been missing themselves, share something to help others understand.</p>
+      </div>
+      <div class="col l4 m12 s12 center">
+        <img src="{{url_for('static', filename='images/searchperson.svg')}}">
+        <p>Give the gift of time to help bring missing people back to safety.</p>
+      </div>
+      <div class="col l4 m12 s12 center">
+        <img src="{{url_for('static', filename='images/missingposter.svg')}}">
+        <p>People worried about someone who has gone missing, and people who have felt the need to go missing themselves. We offer a unique space to share the missing person details. We provide opportunities to contribute time, share expertise, and help people find their loved ones.</p>
+      </div>
+    </div>
+  </main>
+
+  {% endblock content %}

@@ -1,0 +1,76 @@
+  {% extends "layouts/layout2.html" %}
+  {% block content %}
+  <main>
+    <div class="maincont">
+      <h4>Register</h4>
+      <form method="POST" action="/register">
+          <!-- Hidden tag creates our CSRF token -->
+        {{ form.hidden_tag() }}
+        <div class="inputbox">
+          <label for='name'>Name:</label>
+          {% if form.name.errors %}
+            {{ form.name(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.name.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.name(class="form-control form-control-lg")}}
+
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for='user'>Email:</label>
+         {% if form.email.errors %}
+            {{ form.email(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.email(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+       
+        <div class="inputbox">
+          <label for="password">Password:</label>
+          {% if form.password.errors %}
+            {{ form.password(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.password(class="form-control form-control-lg is-invalid")}}
+              
+            {% endif %}
+        </div>
+        <div class="inputbox">
+          <label for="password2">Confirm Password:</label>
+            {% if form.confirm_password.errors %}
+            {{ form.confirm_password(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-freedback">
+              {% for error in form.confirm_password.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.confirm_password(class="form-control form-control-lg")}}
+              
+            {% endif %}
+        </div>
+
+        <p style="text-align: center; margin-top: 0vmin !important;"><span style="color: #4b4b4b;">Have an
+            account? </span><a href="{{url_for('login')}}" style="color: #8d5000;">Login Here</a></p>
+
+        <input type="submit" value="Register" class="waves-effect waves-light btn submitbtn">
+
+      </form>
+    </div>
+  </main>
+
+ {% endblock content %}
